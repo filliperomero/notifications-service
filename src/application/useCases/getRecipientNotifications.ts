@@ -11,7 +11,7 @@ interface GetRecipientNotificationsResponse {
 }
 
 @Injectable()
-export class GetRecipientNotification {
+export class GetRecipientNotifications {
   constructor(private notificationsRepository: NotificationsRepository) {}
 
   async execute(
