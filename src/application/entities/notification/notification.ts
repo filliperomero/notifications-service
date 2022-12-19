@@ -16,10 +16,13 @@ export class Notification {
   private _id: string
   private props: NotificationProps
 
-  constructor(props: Replace<NotificationProps, { createdAt?: Date; updatedAt?: Date }>) {
+  constructor(
+    props: Replace<NotificationProps, { createdAt?: Date; updatedAt?: Date }>,
+    id?: string
+  ) {
     const newDate = new Date()
 
-    this._id = randomUUID()
+    this._id = id ?? randomUUID()
     this.props = {
       ...props,
       createdAt: props.createdAt ?? newDate,
